@@ -85,7 +85,7 @@ const StyledHeader = styled.header`
 
         .research{
             border-bottom: 1px solid #7A7979;
-            padding: 20px 20px 20px 20px;
+            padding: 20px 20px 22px 20px;
 
             input{
                 width: 250px;

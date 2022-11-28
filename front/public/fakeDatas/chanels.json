@@ -1,0 +1,26 @@
+[
+    {
+        "id":1,
+        "name":"acier"
+    },
+    {
+        "id":2,
+        "name":"bureau"
+    },
+    {
+        "id":3,
+        "name":"bois"
+    },
+    {
+        "id":4,
+        "name":"membrane"
+    },
+    {
+        "id":5,
+        "name":"machinerie"
+    },
+    {
+        "id":6,
+        "name":"autre"
+    }
+]

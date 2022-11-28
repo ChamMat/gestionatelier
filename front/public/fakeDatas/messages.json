@@ -1,0 +1,16 @@
+[
+    {
+        "id":1,
+        "users": 1,
+        "chanel":1,
+        "messages":"Salut tout le monde!",
+        "date": ""
+    },
+    {
+        "id":2,
+        "users": 2,
+        "chanel":1,
+        "messages":"Salut!",
+        "date": ""
+    }
+]

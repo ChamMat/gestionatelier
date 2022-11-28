@@ -1,0 +1,23 @@
+[
+    {
+        "id":1,
+        "name": "mathieu",
+        "admin": true,
+        "chanel":[],
+        "magasin": []
+    },
+    {
+        "id":2,
+        "name": "Pierrick",
+        "admin": false,
+        "chanel":[],
+        "magasin": []
+    },
+    {
+        "id":3,
+        "name": "Jo",
+        "admin": false,
+        "chanel":[],
+        "magasin": []
+    }
+]

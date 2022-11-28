@@ -4,13 +4,14 @@ const StyledApp = styled.div`
     
 
     .panel{
-        
-        margin:2em
+        width: 100%;
     }
 
 
     @media screen and (width > 850px){
         display: flex;
+
+        
     }
 `;
 
