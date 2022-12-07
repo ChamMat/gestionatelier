@@ -8,6 +8,18 @@ const StyledChat = styled.div`
         justify-content: space-between;
         flex-wrap: wrap;
         border-bottom: solid 1px #7A7979;
+
+        .active {
+            .chanelBox{
+                border: solid 1px #3584E4;
+                font-weight: bold;
+            }
+        }
+
+        a{
+            text-decoration: none;
+            color:black;
+        }
     }
 `;
 

@@ -1,26 +1,32 @@
 [
     {
         "id":1,
-        "name":"acier"
+        "name":"acier",
+        "user":[]
     },
     {
         "id":2,
-        "name":"bureau"
+        "name":"bureau",
+        "user":[]
     },
     {
         "id":3,
-        "name":"bois"
+        "name":"bois",
+        "user":[]
     },
     {
         "id":4,
-        "name":"membrane"
+        "name":"membrane",
+        "user":[]
     },
     {
         "id":5,
-        "name":"machinerie"
+        "name":"machinerie",
+        "user":[]
     },
     {
         "id":6,
-        "name":"autre"
+        "name":"autre",
+        "user":[]
     }
 ]

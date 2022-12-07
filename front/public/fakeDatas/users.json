@@ -2,22 +2,16 @@
     {
         "id":1,
         "name": "mathieu",
-        "admin": true,
-        "chanel":[],
-        "magasin": []
+        "admin": true
     },
     {
         "id":2,
         "name": "Pierrick",
-        "admin": false,
-        "chanel":[],
-        "magasin": []
+        "admin": false
     },
     {
         "id":3,
         "name": "Jo",
-        "admin": false,
-        "chanel":[],
-        "magasin": []
+        "admin": false
     }
 ]

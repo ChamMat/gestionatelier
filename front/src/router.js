@@ -7,6 +7,7 @@ import Accueil from "./component/Accueil/Accueil";
 import Stock from "./component/Stock/Stock";
 import Fabrication from "./component/Fabrication/Fabrication";
 import Paramettres from "./component/Paramettres/Paramettres";
+import Chanel from "./component/Chanel/Chanel";
 
 
 const router = createBrowserRouter([
@@ -22,6 +23,13 @@ const router = createBrowserRouter([
         {
             path: "/communication",
             element: <Chat />,
+            children: [
+                {
+                    path:"/communication/:chanelName",
+                    element:
+                        <Chanel />
+                }
+            ]
         },
         {
             path: "/stocks",

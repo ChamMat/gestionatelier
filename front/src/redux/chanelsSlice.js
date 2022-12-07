@@ -1,14 +1,48 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-export const chanelsSlice = createSlice({
-    name:"chanels",
-    initialState: {
-        chanels:[]
+
+const initialState = {
+    chanels:[],
+    status: "idle",
+    error:null,
+};
+
+const channelsSlice = createSlice({
+  name: 'chanels',
+  initialState,
+  reducers: {
+    setChannels(state, action) {
+      state.channels = action.payload;
     },
-
-    reducers:{},
+  },
+  extraReducers(builder) {
+    builder
+    .addCase(fetchChannels.pending, (state, action) => {
+        state.status = 'loading'
+      })
+      .addCase(fetchChannels.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+        // Add any fetched posts to the array
+        state.chanels = state.chanels.concat(action.payload)
+      })
+      .addCase(fetchChannels.rejected, (state, action) => {
+        state.status = 'failed'
+        state.error = action.error.message
+      })
+  }
 });
 
-export const {} = chanelsSlice.actions;
+export const fetchChannels = createAsyncThunk(
+    'chanels/fetchChannels',
+    async () => {
+      const response = await axios.get('./fakeDatas/chanels.json');
+      return response.data;
+    }
+  );
 
-export default chanelsSlice.reducer;
+export const { setChannels } = channelsSlice.actions;
+
+export default channelsSlice.reducer;
+
+export const selectAllChannels = state => state.channels

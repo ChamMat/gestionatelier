@@ -1,16 +1,31 @@
 [
     {
         "id":1,
+        "chanel": 2,
         "users": 1,
-        "chanel":1,
         "messages":"Salut tout le monde!",
         "date": ""
     },
     {
         "id":2,
+        "chanel": 2,
         "users": 2,
-        "chanel":1,
         "messages":"Salut!",
         "date": ""
-    }
+    },
+    {
+        "id":3,
+        "chanel": 1,
+        "users": 3,
+        "messages":"On est bon ?",
+        "date": ""
+    },
+    {
+        "id":4,
+        "chanel": 1,
+        "users": 1,
+        "messages":"Oui! Tout est ok!",
+        "date": ""
+    },
+
 ]

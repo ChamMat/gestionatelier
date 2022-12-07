@@ -1,16 +1,8 @@
-import StyledChanel from "./StyledChanel";
-
-const Chanel = (props) => {
-
-    const {
-        id,
-        name
-    } = props;
-
+const Chanel = () => {
     return(
-        <StyledChanel>
-            <div>{name}</div>
-        </StyledChanel>
+        <div>
+            Chanel de communication
+        </div>
     )
 }
 

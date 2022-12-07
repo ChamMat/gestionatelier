@@ -1,34 +1,44 @@
 import { useEffect, useState } from "react";
-import Chanel from "../Chanel/Chanel";
+import ChanelBox from "../ChanelBox/ChanelBox";
 import StyledChat from "./StyledChat";
+import { useDispatch, useSelector} from "react-redux";
+import { fetchChannels, selectAllChannels } from "../../redux/chanelsSlice";
+import { NavLink, Outlet } from "react-router-dom";
+
 
 const Chat = () => {
 
-    const [chanels, setChanels] = useState([]);
+    const dispatch = useDispatch();
+
+    const chanelsStatus = useSelector(state => state.chanels.status);
+    const chanels = useSelector(state => state.chanels.chanels)
 
     useEffect(()=>{
-        fetch('./fakeDatas/chanels.json')
-        .then((response) => response.json())
-        .then((data) => setChanels(data))
-        .catch(function(error) {
-            console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
-          });
-    })
+        if (chanelsStatus === 'idle') {
+            dispatch(fetchChannels())
+          }
+    }, [chanelsStatus, dispatch])
 
     return(
         <StyledChat>
             <div className='chanelList'>
                 {
                     chanels.map((chanel)=>(
-                        <Chanel
-                            className="chanel"
+                        <NavLink
+                            to={`/communication/${chanel.name}`}
                             key={chanel.id}
-                            id={chanel.id}
-                            name={chanel.name}
-                        />
+                        >
+                            <ChanelBox
+                                className="chanel"
+                                key={chanel.id}
+                                id={chanel.id}
+                                name={chanel.name}
+                            />
+                        </NavLink>
                     ))
                 }
             </div>
+            <Outlet />
         </StyledChat>
     )
 };
