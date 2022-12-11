@@ -36,7 +36,7 @@ const channelsSlice = createSlice({
 export const fetchChannels = createAsyncThunk(
     'chanels/fetchChannels',
     async () => {
-      const response = await axios.get('./fakeDatas/chanels.json');
+      const response = await axios.get('/fakeDatas/chanels.json');
       return response.data;
     }
   );
@@ -44,5 +44,3 @@ export const fetchChannels = createAsyncThunk(
 export const { setChannels } = channelsSlice.actions;
 
 export default channelsSlice.reducer;
-
-export const selectAllChannels = state => state.channels

@@ -23,13 +23,10 @@ const router = createBrowserRouter([
         {
             path: "/communication",
             element: <Chat />,
-            children: [
-                {
-                    path:"/communication/:chanelName",
-                    element:
-                        <Chanel />
-                }
-            ]
+        },
+        {
+            path: "/communication/:chanelName",
+            element: <Chat />,
         },
         {
             path: "/stocks",
