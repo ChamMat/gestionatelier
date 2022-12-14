@@ -5,7 +5,7 @@ const StyledChanel = styled.div`
 
     .inputWrapper{
         position: absolute;
-        bottom: 2em;
+        bottom: 5em;
         width: 100%;
         input{
             width: 90%;
@@ -13,11 +13,18 @@ const StyledChanel = styled.div`
         }
     }
 
-    ul {
-        li{
-            margin: 0.5em;
+    .chatWrapper{
+        
+        height: 25vh;
+        overflow: scroll;
+        ul {
+
+            li{
+                margin: 0.5em;
+            }
         }
     }
+
     .userName{
         font-weight: bold;
     }
@@ -28,6 +35,11 @@ const StyledChanel = styled.div`
                 width: 67%;
             }
         }
+
+        .chatWrapper{
+        height: 70vh;
+        
+    }
     }
 `;
 

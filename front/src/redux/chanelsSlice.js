@@ -36,7 +36,7 @@ const channelsSlice = createSlice({
 export const fetchChannels = createAsyncThunk(
     'chanels/fetchChannels',
     async () => {
-      const response = await axios.get('/fakeDatas/chanels.json');
+      const response = await axios.get('http://192.168.1.16:3001/communication/chanels');
       return response.data;
     }
   );

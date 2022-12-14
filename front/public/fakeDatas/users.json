@@ -1,17 +1,8 @@
 [
     {
-        "id":1,
+        "_id": "6399aba31a75813b4ccc2e1e",
         "name": "mathieu",
-        "admin": true
-    },
-    {
-        "id":2,
-        "name": "Pierrick",
-        "admin": false
-    },
-    {
-        "id":3,
-        "name": "Jo",
-        "admin": false
+        "admin": true,
+        "__v": 0
     }
 ]

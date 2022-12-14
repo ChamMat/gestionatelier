@@ -38,7 +38,7 @@ const messagesSlice = createSlice({
 export const fetchMessages = createAsyncThunk(
     'messages/fetchMessages',
     async () => {
-      const response = await axios.get('/fakeDatas/messages.json');
+      const response = await axios.get('http://192.168.1.16:3001/communication/messages');
       return response.data;
     }
   );

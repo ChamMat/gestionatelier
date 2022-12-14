@@ -3,11 +3,14 @@ import ChanelBox from "../ChanelBox/ChanelBox";
 import StyledChat from "./StyledChat";
 import { useDispatch, useSelector} from "react-redux";
 import { fetchChannels } from "../../redux/chanelsSlice";
-import { fetchMessages } from "../../redux/messagesSlice";
+import { fetchMessages, setMessages } from "../../redux/messagesSlice";
 import { fetchUsers } from "../../redux/usersSlice";
 import { NavLink } from "react-router-dom";
 import Chanel from "../Chanel/Chanel";
 
+import { io } from "socket.io-client";
+
+const socket = io.connect("http://192.168.1.16:3001");
 
 const Chat = () => {
 
@@ -40,6 +43,12 @@ const Chat = () => {
 
     }, [chanelsStatus, dispatch])
 
+    useEffect(() => {
+        socket.on("receiveMessage", (data) => {
+            dispatch(setMessages(data))
+          })
+    }, [socket])
+
     return(
         <StyledChat>
             <div className='chanelList'>
@@ -47,13 +56,13 @@ const Chat = () => {
                     chanels.map((chanel)=>(
                         <NavLink
                             to={`/communication/${chanel.name}`}
-                            key={chanel.id}
+                            key={chanel._id}
                             onClick={handleClickChanelBox}
                         >
                             <ChanelBox
                                 className="chanel"
-                                key={chanel.id}
-                                id={chanel.id}
+                                key={chanel._id}
+                                id={chanel._id}
                                 name={chanel.name}
                             />
                         </NavLink>
@@ -64,8 +73,9 @@ const Chat = () => {
                     chanels.map(chanel => 
                       chanel.name === activeChanel ?
                         <Chanel
-                            key={chanel.id}
+                            key={chanel._id}
                             activeChanel={chanel}
+                            socket={socket}
                         />:
                         ""
                     )
